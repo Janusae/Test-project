@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "account/01.css" %}">
+</head>
+<body>
+<!--ring div starts here-->
+<div class="ring">
+  <i style="--clr:#00ff0a;"></i>
+  <i style="--clr:#ff0057;"></i>
+  <i style="--clr:#fffd44;"></i>
+  <div class="login">
+    <h2>Register</h2>
+<form method="post" action="">
+    {% csrf_token %}
+        <div class="inputBx">
+      {{ form.username }}
+    </div>
+    <br>
+    <div class="inputBx">
+      {{ form.email }}
+    </div>
+<br>
+    <div class="inputBx">
+      {{ form.password }}
+    </div>
+<br>
+    <div class="inputBx">
+      {{ form.confirm_password }}
+    </div><br>
+    <div class="inputBx">
+      <input type="submit" value="Register">
+    </div>
+    <div class="links">
+</form>
+
+    </div>
+  </div>
+</div>
+<!--ring div ends here-->
+</body>
+</html>

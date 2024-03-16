@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block body %}
+       <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              HandTime
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "index" %}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about_us' %}"> About</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'product' %}">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="testimonial.html">Testimonial</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Contact-Us' %}">Contact Us</a>
+              </li>
+            </ul>
+            <div class="user_optio_box">
+              <a href="">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+<section class="product_section ">
+    <div class="container">
+      <div class="product_heading">
+        <h2>
+          Top Sale Watches
+        </h2>
+      </div>
+      <div class="product_container">
+    {% for d in data %}
+    	        <div class="box">
+          <div class="box-content">
+            <div class="img-box">
+              <img src="{{ d.image.url }}" alt="">
+            </div>
+            <div class="detail-box">
+              <div class="text">
+                <h6>
+                 {{ d.name }}
+                </h6>
+                <h5>
+                  <span>$</span> {{ d.price }}
+                </h5>
+              </div>
+              <div class="like">
+                <h6>
+                  Like
+                </h6>
+                <div class="star_container">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-box">
+            <a href="{{ d.id }}">
+              Add To Cart
+            </a>
+          </div>
+        </div>
+    {% endfor %}
+
+{#        <div class="box">#}
+{#          <div class="box-content">#}
+{#            <div class="img-box">#}
+{#              <img src="images/w2.png" alt="">#}
+{#            </div>#}
+{#            <div class="detail-box">#}
+{#              <div class="text">#}
+{#                <h6>#}
+{#                  Men's Watch#}
+{#                </h6>#}
+{#                <h5>#}
+{#                  <span>$</span> 300#}
+{#                </h5>#}
+{#              </div>#}
+{#              <div class="like">#}
+{#                <h6>#}
+{#                  Like#}
+{#                </h6>#}
+{#                <div class="star_container">#}
+{#                  <i class="fa fa-star" aria-hidden="true"></i>#}
+{#                  <i class="fa fa-star" aria-hidden="true"></i>#}
+{#                  <i class="fa fa-star" aria-hidden="true"></i>#}
+{#                  <i class="fa fa-star" aria-hidden="true"></i>#}
+{#                  <i class="fa fa-star" aria-hidden="true"></i>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{#          <div class="btn-box">#}
+{#            <a href="">#}
+{#              Add To Cart#}
+{#            </a>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="box">#}
+{#          <div class="box-content">#}
+{#            <div class="img-box">#}
+{#              <img src="images/w3.png" alt="">#}
+{#            </div>#}
+{#            <div class="detail-box">#}
+{#              <div class="text">#}
+{#                <h6>#}
+{#                  Men's Watch#}
+{#                </h6>#}
+{#                <h5>#}
+{#                  <span>$</span> 300#}
+{#                </h5>#}
+{#              </div>#}
+{#              <div class="like">#}
+{#                <h6>#}
+{#                  Like#}
+{#                </h6>#}
+{#                <div class="star_container">#}
+{#                  <i class="fa fa-star" aria-hidden="true"></i>#}
+{#                  <i class="fa fa-star" aria-hidden="true"></i>#}
+{#                  <i class="fa fa-star" aria-hidden="true"></i>#}
+{#                  <i class="fa fa-star" aria-hidden="true"></i>#}
+{#                  <i class="fa fa-star" aria-hidden="true"></i>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{#          <div class="btn-box">#}
+{#            <a href="">#}
+{#              Add To Cart#}
+{#            </a>#}
+{#          </div>#}
+{#        </div>#}
+      </div>
+    </div>
+  </section>
+{% endblock %}
